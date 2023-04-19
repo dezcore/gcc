@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "list.h"
 
 //Définition de quelques macros
 #define FALSE 0
@@ -31,7 +32,42 @@ int sizeOfTest() {
     return 0;
 }
 
+int testList() {
+    List l = listCreate();
+    listDisplay(l);
+    printf("\n");
+
+    listAdd(&l, 20);
+    listDisplay(l);
+    printf("\n");
+
+    listAdd(&l, 30);
+    listDisplay(l);
+    printf("\n");
+
+    listAdd(&l, 10);
+    listDisplay(l);
+    printf("\n");
+
+    listAdd(&l, 50);
+    listDisplay(l);
+    printf("\n");
+
+    listAdd(&l, 40);
+    listDisplay(l);
+    printf("\n");
+
+    printf("Size Before == %lu\n", listSize(l));
+
+    listClear(&l);
+    listDisplay(l);
+    printf("\n");
+    printf("Size After == %lu\n", listSize(l));
+
+    return 0;
+}
+
 int main() {
-    sizeOfTest();
+    testList();
     return 0;
 }
