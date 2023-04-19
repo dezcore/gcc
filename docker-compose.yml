@@ -6,3 +6,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    volumes:
+      - gccapp:/app
+volumes:
+  gccapp:
